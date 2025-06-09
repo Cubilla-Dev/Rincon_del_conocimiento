@@ -1,0 +1,44 @@
+{
+  "name": "rincon_del_conocimiento",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cubilla-Dev/Rincon_del_conocimiento.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cubilla-Dev/Rincon_del_conocimiento/issues"
+  },
+  "homepage": "https://github.com/Cubilla-Dev/Rincon_del_conocimiento#readme",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cloudinary": "^2.6.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^2.0.1",
+    "mysql2": "^3.14.1",
+    "next-connect": "^1.0.0",
+    "zod": "^3.25.53"
+  },
+  "devDependencies": {
+    "@prisma/client": "^6.9.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.9.0",
+    "supertest": "^7.1.1"
+  },
+  "prisma": {
+    "schema": "src/infrastructure/database/prisma/schema.prisma"
+  }
+}

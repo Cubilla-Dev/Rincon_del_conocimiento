@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../../../../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Guide {
+  id_guide    Int      @id @default(autoincrement())
+  title       String
+  isVerified  Boolean    @default(false)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  steps       Step[]
+  equipments  Equipment[] 
+  images      Image[]
+}
+
+model Step {
+  id_step   Int   @id @default(autoincrement())
+  content   String
+  guide     Guide   @relation(fields: [guideId], references: [id_guide])
+  guideId   Int
+  order     Int
+}
+
+model Equipment {
+  id_equipment Int   @id @default(autoincrement())
+  name         String
+  guide        Guide   @relation(fields: [guideId], references: [id_guide])
+  guideId      Int
+}
+
+model Image {
+  id_image   Int     @id @default(autoincrement())
+  url        String
+  guide      Guide   @relation(fields: [guideId], references: [id_guide])
+  guideId    Int
+  createdAt  DateTime @default(now())
+}

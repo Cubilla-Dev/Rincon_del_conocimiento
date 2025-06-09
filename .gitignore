@@ -1,0 +1,53 @@
+# Dependencias y builds
+/node_modules
+/.pnp
+.pnp.js
+
+# Entornos y variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+*.env*
+
+# Logs y caché
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+/.sass-cache
+/coverage
+
+# IDE y editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Prisma (ORM)
+/prisma/migrations
+/prisma/*.db  # SQLite
+/prisma/*.db-journal
+
+# Otros generados
+dist/
+build/
+*.tmp
+*.bak
+.DS_Store
+.thumbsdb
+
+# Testing (Jest, Mocha, etc.)
+/junit.xml
+/nyc_output
+
+# Configuraciones de paquetes
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+/src/generated/prisma
+/generated/prisma
